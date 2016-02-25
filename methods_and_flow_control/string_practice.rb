@@ -7,4 +7,6 @@ puts text.upcase
 puts text.capitalize.gsub('string', "'string'")
 puts "The string '#{text}' has #{text.length} characters"
 puts text.reverse
-puts "#{('practice ' * 3).strip}!"
+text = text.gsub('this is a string to ', '')
+text = text.gsub('with', '')
+puts "#{(text * 3).strip}!"
