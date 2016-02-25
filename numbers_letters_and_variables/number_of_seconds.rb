@@ -17,11 +17,9 @@ puts 'That means there are:'
 puts "  #{seconds_per_hour} seconds in an hour,"
 puts "  #{seconds_per_day} seconds in a day,"
 puts "  #{seconds_per_week} seconds in a week"
-years = 20
-print_string = "That means when you turn #{years}, you've been alive for \
-#{(years * seconds_per_year)} seconds,"
-puts print_string
-years = 100
-print_string = "and if you make it to #{years}, you will have lived \
-#{(years * seconds_per_year)} seconds. Make them count!"
-puts print_string
+years_20 = 20
+years_100 = 100
+puts "That means when you turn #{years_20}, you've been alive for \
+#{(years_20 * seconds_per_year)} seconds,"
+puts "and if you make it to #{years_100}, you will have lived \
+#{(years_100 * seconds_per_year)} seconds. Make them count!"
