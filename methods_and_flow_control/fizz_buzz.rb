@@ -1,14 +1,21 @@
 #!/usr/bin/env ruby
 
-(1..100).each do |i|
-  case
-  when (i % 3 == 0) && (i % 5 == 0)
+def fizz_test(number)
+  (number % 3 == 0)
+end
+
+def buzz_test(number)
+  (number % 5 == 0)
+end
+
+(1..100).each do |number|
+  if fizz_test(number) && buzz_test(number)
     puts 'FizzBuzz'
-  when (i % 3 == 0)
+  elsif fizz_test(number)
     puts 'Fizz'
-  when (i % 5 == 0)
+  elsif buzz_test(number)
     puts 'Buzz'
   else
-    puts i
+    puts number
   end
 end
