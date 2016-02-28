@@ -9,7 +9,11 @@ class CashRegister
   end
 
   def display_total
-    puts "register.total # => #{format('%.2f', @total_amount)}"
+    puts "register.total # => #{to_currency(@total_amount)}"
+  end
+
+  def to_currency(amount)
+    format('%.2f', amount)
   end
 
   def underpayment
@@ -23,10 +27,10 @@ class CashRegister
   def display_change
     if change_due
       print 'register.pay # => Your change is '
-      puts format('%.2f', @pay_amount - @total_amount)
+      puts to_currency(@pay_amount - @total_amount)
     elsif underpayment
       print 'register.due # => You still owe '
-      puts format('%.2f', @total_amount - @pay_amount)
+      puts to_currency(@total_amount - @pay_amount)
     end
     @total_amount = 0.00
   end
