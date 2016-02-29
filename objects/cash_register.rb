@@ -9,7 +9,7 @@ class CashRegister
   end
 
   def display_total
-    puts "register.total # => #{to_currency(@total_amount)}"
+    puts "register.total # => $#{to_currency(@total_amount)}"
   end
 
   def to_currency(amount)
@@ -26,17 +26,17 @@ class CashRegister
 
   def display_change
     if change_due
-      print 'register.pay # => Your change is '
+      print 'register.pay # => Your change is $'
       puts to_currency(@pay_amount - @total_amount)
     elsif underpayment
-      print 'register.due # => You still owe '
+      print 'register.due # => You still owe $'
       puts to_currency(@total_amount - @pay_amount)
     end
     @total_amount = 0.00
   end
 
   def purchase_amount
-    print 'register.purchase # => '
+    print 'register.purchase # => $'
     @purchase_amount = gets.chomp.to_f
     @total_amount += @purchase_amount
     print " Another purchase? Enter 'yes' for another. "
@@ -46,7 +46,7 @@ class CashRegister
 
   def payment_amount
     if @total_amount > 0
-      print 'register.pay # => '
+      print 'register.pay # => $'
       @pay_amount = gets.chomp.to_f
     end
   end
