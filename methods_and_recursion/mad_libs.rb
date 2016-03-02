@@ -65,7 +65,7 @@ prompt = [
 
 # interrogatory
 count = 0
-for answer in prompt
+prompt.each do |answer|
   puts "Give me #{request[count]}"
   puts answer
   count += 1
@@ -73,12 +73,10 @@ end
 puts request[count]
 
 # mad_libs vacations
-for line in text
+text.each do |line|
   (0..18).each do |index|
-    padded_index = format('%02d', index)
-    if line.include?(padded_index)
-      line.gsub!(padded_index, prompt[index])
-    end
+    pad_index = format('%02d', index)
+    line.gsub!(pad_index, prompt[index]) if line.include?(pad_index)
   end
   puts line
 end
