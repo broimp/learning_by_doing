@@ -1,5 +1,3 @@
-require "./room.rb"
-
 # piece of furniture
 class Table
   attr_accessor :name, :width, :length, :area
@@ -19,5 +17,6 @@ class Table
     previous_length = @length
     @width = previous_length
     @length = previous_width
+    @name = @name.reverse
   end
 end
