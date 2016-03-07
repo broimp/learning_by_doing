@@ -17,6 +17,6 @@ class Table
     previous_length = @length
     @width = previous_length
     @length = previous_width
-    @name = @name.reverse
+    @name = 'turn ' + @name
   end
 end

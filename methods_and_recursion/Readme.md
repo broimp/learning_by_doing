@@ -14,10 +14,14 @@ So it prints the set of tables, then flips the ones 90 degrees that
 have longer than average lengths to set a room with uniform table
 spacing.
 
-It would be nice to make the table array fit the two dimensional
-room, and not just be a line of tables. It would be nice to load
+It would be nice to make the table array fit a two dimensional
+room grid, and not just be a line of tables. It would be nice to load
 a gem that does wire frame output and present output in a graphic
 display. It would be nice to have other balancing and sorting
 methods. It would be nice to use an object structure that could
 recursively seek some optimal configuration, and I would love
 advice on how to make steps in that direction.
+
+#### Changed calling arguments to add number of tables
+
+Also randomized table sizes.
