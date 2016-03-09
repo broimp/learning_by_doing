@@ -35,22 +35,22 @@ puts "'#{array[0..3].join(', ')}'"
 # [1,2,3,4,8,9,10]"
 array.delete_if { |element| element > 4 && element < 8 }
 print "If we delete 5, 6 and 7 from the array, we're left with "
-puts array.to_s.delete('"').delete(' ')
+puts "[#{array.join(',')}]"
 
 # "If we add 5 at the beginning of the array, we're left with
 # [5,1,2,3,4,8,9,10]"
 print "If we add 5 at the beginning of the array, we're left with "
-puts array.unshift(5).to_s.delete('"').delete(' ')
+puts "[#{array.unshift(5).join(',')}]"
 
 # "If we add 6 at the end of the array, we're left with
 # [5,1,2,3,4,8,9,10,6]"
 print "If we add 6 at the end of the array, we're left with "
-puts array.push(6).to_s.delete('"').delete(' ')
+puts "[#{array.push(6).join(',')}]"
 
 # "Only the elements [9, 10] are > 8."
 array.select! { |element| element > 8 }
 print 'Only the elements '
-puts "#{array.to_s.delete('"')} are > 8."
+puts "[#{array.join(', ')}] are > 8."
 
 # "If we remove all the elements, then the length of the array is 0"
 print 'If we remove all the elements, then the length of the array'
