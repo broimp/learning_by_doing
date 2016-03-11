@@ -1,19 +1,20 @@
 #!/usr/bin/env ruby
 
-numbers = []
-
-(0..99).each do |number|
-  test_number = number + 1
-  if test_number % 3 == 0 && test_number % 5 == 0
-    numbers.push('FizzBuzz')
-  elsif test_number % 3 == 0
-    numbers.push('Fizz')
-  elsif test_number % 5 == 0
-    numbers.push('Buzz')
+def what_to_do_with(value)
+  if value % 3 == 0 && value % 5 == 0
+    'FizzBuzz'
+  elsif value % 3 == 0
+    'Fizz'
+  elsif value % 5 == 0
+    'Buzz'
   else
-    numbers.push(test_number.to_s)
+    value
   end
 end
-numbers.each do |number|
-  puts number
+
+array = (1..100).to_a
+array.map! { |element| what_to_do_with(element) }
+
+array.each do |value|
+  puts value
 end
