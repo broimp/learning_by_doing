@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # Cash Register
 class CashRegister
+  
   def initialize
     @total = 0
   end

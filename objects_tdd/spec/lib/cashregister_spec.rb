@@ -38,7 +38,7 @@ describe '#pay(amount)' do
   end
   context 'effect of payment on output' do
     context 'when paid in full' do
-      it 'should show a total of 0' do
+      it 'should show a total of 0.00' do
         subject = CashRegister.new
         subject.purchase(4)
         expect(subject.pay(4)).to eq('pay($4.00) # => $0.00')
