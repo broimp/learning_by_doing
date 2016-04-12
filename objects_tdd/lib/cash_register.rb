@@ -6,26 +6,22 @@ class CashRegister
   end
 
   def total
-    money(@total.abs)
-  end
-
-  def money(amount)
-    format('$%.2f', amount)
+    format('$%.2f', @total.abs)
   end
 
   def purchase(amount)
     @total += amount
-    "purchase(#{money(amount)}) # => #{total}"
+    "purchase(#{format('$%.2f', amount)}) # => #{total}"
   end
 
   def pay(amount)
     @total -= amount
     if @total == 0
-      "pay(#{money(amount)}) # => #{total}"
+      "pay(#{format('$%.2f', amount)}) # => #{total}"
     elsif @total > 0
-      "pay(#{money(amount)}) # => Your new total is #{total}"
+      "pay(#{format('$%.2f', amount)}) # => Your new total is #{total}"
     elsif @total < 0
-      "pay(#{money(amount)}) # => Your change is #{total}"
+      "pay(#{format('$%.2f', amount)}) # => Your change is #{total}"
     end
   end
 end
